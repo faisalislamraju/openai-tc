@@ -14,10 +14,6 @@ use App\Http\Controllers\ChatGPTController;
 |
 */
 
-Route::get('/', function () {
-    return view('chatgpt');
-});
-
 Route::post('/chatgpt', [ChatGPTController::class, 'generateResponse']);
 
 Route::get('/chatgpt', function () {

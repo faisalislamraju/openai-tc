@@ -19,7 +19,7 @@ class ChatGPTController extends Controller
         // Send the prompt to ChatGPT and receive the response
         $response = $openai->completions()->create([
             'prompt' => $prompt,
-            'model' => 'text-davinci-002',
+            'model' => 'text-davinci-003',
             'max_tokens' => 250,
         ]);
         $responseText = ltrim($response->choices[0]->text);
