@@ -32,12 +32,12 @@
 <body>
 <div class="container">
     <div class="card">
-        <h2 class="center-align">ChatGPT</h2>
+        <h2 class="center-align">ChatGPT - Tryout</h2>
         <form method="POST" action="/chatgpt">
             @csrf
             <div class="input-field">
                 <i class="material-icons prefix">question_answer</i>
-                <textarea id="prompt" name="prompt" class="materialize-textarea" required onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'    '+v.substring(e);this.selectionStart=this.selectionEnd=s+4;return false;}">
+                <textarea id="prompt" name="prompt" class="materialize-textarea">
                         @if(isset($prompt)){{$prompt}}@endif
                     </textarea>
                 <label for="prompt">Enter your prompt</label>
@@ -59,12 +59,6 @@
             document.getElementById("prompt").value = "";
             document.getElementById("response").innerHTML = "";
         }
-</script>
-<script>
-  document.getElementById("prompt").addEventListener("click", function() {
-    this.focus();
-    this.setSelectionRange(0, 0);
-  });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
